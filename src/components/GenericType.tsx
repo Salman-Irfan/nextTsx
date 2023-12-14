@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { Dispatch, ReactNode, SetStateAction } from "react";
 
 // defining props type with a constraint on T
 type InputValType = string | number;
@@ -6,7 +6,7 @@ type InputValType = string | number;
 type PropsType<T extends InputValType> = {
     label: string;
     value: T;
-    onChange: () => void;
+    setter: Dispatch<SetStateAction<T>>;
 };
 
 const GenericType = <T extends InputValType>(props: PropsType<T>) => {
@@ -19,7 +19,7 @@ const GenericType = <T extends InputValType>(props: PropsType<T>) => {
                     type="text" 
                     value={props.value} 
                     placeholder="type string or number"
-                    onChange={props.onChange} 
+                    onChange={(e)=>props.setter(e.target.value as T)} 
                 />
             </form>
         </>
