@@ -11,7 +11,7 @@ const Box = (props: PropsType) => {
     return (
         <>
             <h1>{props.heading}</h1>
-            <p>{props.children}</p>
+            <>{props.children}</>
         </>
     );
 };
