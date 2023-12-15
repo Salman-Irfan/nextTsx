@@ -1,4 +1,5 @@
 "use client";
+import ChangeThemeButton from "@/components/ChangeThemeButton";
 import ThemeProvider from "@/components/ThemeProvider";
 import React, { createContext } from "react";
 
@@ -7,20 +8,23 @@ type ThemeType = "light" | "dark";
 // types
 interface ThemeContextType {
     theme: ThemeType;
-    toggleTheme: (theme: ThemeType) => void; // Update the type to match the implementation
+    toggleTheme: (theme: ThemeType) => void;
 }
 
 // context
 export const ThemeContext = createContext<ThemeContextType | null>({
     theme: "light",
-    toggleTheme: () => {}, // Now the type matches: () => void
+    toggleTheme: (theme: ThemeType) => {}, // Provide a function with the correct signature
 });
+
 
 const page = () => {
     return (
         <>
             <ThemeProvider>
                 <h1>Context</h1>
+                {/* import another component button to change theme */}
+                <ChangeThemeButton/>
             </ThemeProvider>
         </>
     );

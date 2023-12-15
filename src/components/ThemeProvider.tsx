@@ -5,7 +5,7 @@ type ThemeType = "light" | "dark";
 // types
 interface ThemeContextType {
     theme: ThemeType;
-    toggleTheme: (theme: ThemeType) => void; // Update the type to match the implementation
+    toggleTheme: (theme: ThemeType) => void;
 }
 
 const ThemeProvider = ({children}:{children: ReactNode}) => {
