@@ -31,20 +31,29 @@ const Navbar: React.FC = () => {
                     className={`lg:flex space-x-4 mx-4 ${
                         isMenuOpen ? "block" : "hidden"
                     }`}>
+                    {/* home */}
                     <Link
                         href="/"
                         className="text-white hover:text-gray-300 transition duration-300 mx-4">
                         <>Home</>
                     </Link>
+                    {/* about */}
                     <Link
                         href="/about"
                         className="text-white hover:text-gray-300 transition duration-300 mx-4">
                         <>About</>
                     </Link>
+                    {/* contact */}
                     <Link
                         href="/contact"
                         className="text-white hover:text-gray-300 transition duration-300 mx-4">
                         <>Contact</>
+                    </Link>
+                    {/* context api */}
+                    <Link
+                        href="/context"
+                        className="text-white hover:text-gray-300 transition duration-300 mx-4">
+                        <>Context</>
                     </Link>
                 </div>
 
